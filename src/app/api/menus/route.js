@@ -60,11 +60,6 @@ export async function GET(req) {
             [uid]
           );
 
-        if (menus.rows.length === 0) {
-            client.release();
-            return NextResponse.json({ error: 'Restaurant not found for the given user' }, { status: 404 });
-        }
-
         client.release();
 
         return NextResponse.json({ menus: menus.rows }, { status: 200 });
