@@ -1,8 +1,4 @@
-import { Pool } from 'pg';
-
-const pool = new Pool({
-    connectionString: process.env.POSTGRES_URL,
-});
+import { pool } from 'pg';
 
 export async function GET(request) {
     try {

@@ -1,9 +1,5 @@
-import { Pool } from 'pg';
+import { pool } from 'pg';
 import { NextResponse } from 'next/server';
-
-const pool = new Pool({
-    connectionString: process.env.POSTGRES_URL, // Ensure DATABASE_URL is in your .env file
-});
 
 export async function POST(req) {
     const { menuName, description, uid } = await req.json();
